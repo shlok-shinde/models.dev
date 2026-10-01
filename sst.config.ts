@@ -19,11 +19,7 @@ export default $config({
     const worker = new sst.cloudflare.Worker("Server", {
       url: true,
       domain: $app.stage === "dev" ? "models.dev" : undefined,
-      link: [
-        new sst.Secret("PosthogToken"),
-        new sst.Secret("LakeUrl"),
-        new sst.Secret("LakeSecret"),
-      ],
+      link: [new sst.Secret("PosthogToken")],
       handler: "./packages/function/src/worker.ts",
       assets: {
         directory: "./packages/web/dist",

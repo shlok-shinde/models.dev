@@ -6,14 +6,6 @@
 import "sst"
 declare module "sst" {
   export interface Resource {
-    "LakeSecret": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "LakeUrl": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
     "PosthogToken": {
       "type": "sst.sst.Secret"
       "value": string
